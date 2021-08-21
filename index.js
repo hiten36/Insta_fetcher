@@ -16,28 +16,14 @@ app.set('view engine','handlebars');
 app.engine('handlebars',exphbs());
 
 app.get('/', async (req,res)=>{
-    fs.readdir(path.join(__dirname,'static/images'), (err, files) => {
-        if (err) console.log(err);
-        for (const file of files) {
-            fs.unlink(path.join('./static/images', file), err => {
-                if (err) console.log(err);
-            });
-        }
-    });
+
     res.render('index',{
         flag:false
     });
 })
 app.post('/',async (req,res)=>{
     let name=req.body.name;
-    fs.readdir(path.join(__dirname,'static/images'), (err, files) => {
-        if (err) console.log(err);
-        for (const file of files) {
-            fs.unlink(path.join('./static/images', file), err => {
-                if (err) console.log(err);
-            });
-        }
-    });
+
     try {
         let details=await ig.getProfile(name);
         const options = {
