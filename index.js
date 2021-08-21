@@ -58,7 +58,7 @@ app.post('/',async (req,res)=>{
             flag1:true,
             flag:false,
             color:"danger",
-            msg:"Failed! Try again after sometime. error 2"
+            msg:error
         })
     }
 })
