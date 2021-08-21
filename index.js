@@ -28,7 +28,7 @@ app.post('/',async (req,res)=>{
         let details=await ig.getProfile(name);
         const options = {
             url: details.pic,
-            dest: './static/images/image.jpg'
+            dest: path.join(__dirname,'static/images/image.jpg')
         }
         imageDownloader.image(options)
         .then(({ filename }) => {
@@ -50,7 +50,7 @@ app.post('/',async (req,res)=>{
                 flag1:true,
                 flag:false,
                 color:"danger",
-                msg:"Failed! Try again after sometime."
+                msg:"Failed! Try again after sometime. error 1"
             })
         })
     } catch (error) {
@@ -58,7 +58,7 @@ app.post('/',async (req,res)=>{
             flag1:true,
             flag:false,
             color:"danger",
-            msg:"Failed! Try again after sometime."
+            msg:"Failed! Try again after sometime. error 2"
         })
     }
 })
