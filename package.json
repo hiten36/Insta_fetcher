@@ -1,0 +1,18 @@
+{
+  "name": "insta-dp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "inex.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "index.js"
+  },
+  "author": "hiten",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "express-handlebars": "^5.3.3",
+    "image-downloader": "^4.0.3",
+    "scraper-instagram": "^1.0.17"
+  }
+}
