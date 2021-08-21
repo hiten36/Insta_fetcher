@@ -16,7 +16,7 @@ app.set('view engine','handlebars');
 app.engine('handlebars',exphbs());
 
 app.get('/', async (req,res)=>{
-    fs.readdir('./static/images', (err, files) => {
+    fs.readdir(path.join(__dirname,'static/images'), (err, files) => {
         if (err) console.log(err);
         for (const file of files) {
             fs.unlink(path.join('./static/images', file), err => {
@@ -30,7 +30,7 @@ app.get('/', async (req,res)=>{
 })
 app.post('/',async (req,res)=>{
     let name=req.body.name;
-    fs.readdir('./static/images', (err, files) => {
+    fs.readdir(path.join(__dirname,'static/images'), (err, files) => {
         if (err) console.log(err);
         for (const file of files) {
             fs.unlink(path.join('./static/images', file), err => {
